@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ellorra AI creates innovative solutions in productivity, education, and personal finance.">
+    <title>Ellorra AI - Innovative Solutions for Modern Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grain"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">Ellorra AI</div>
+            <nav class="nav">
+                <a href="#mission">Mission</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="title-line">Innovation</span>
+                        <span class="title-line">for the</span>
+                        <span class="title-line title-line--accent">Everyday</span>
+                    </h1>
+                    <div class="hero-divider"></div>
+                    <p class="hero-description">
+                        We build intelligent tools that transform how you work, learn, and manage your financial life.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mission" class="mission">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Our Mission</span>
+                    <h2 class="section-title">Creating innovative solutions in areas of productivity, education, and personal finance</h2>
+                </div>
+
+                <div class="pillars">
+                    <div class="pillar">
+                        <div class="pillar-number">01</div>
+                        <h3 class="pillar-title">Productivity</h3>
+                        <p class="pillar-description">Tools that amplify your capacity to accomplish meaningful work.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-number">02</div>
+                        <h3 class="pillar-title">Education</h3>
+                        <p class="pillar-description">Learning experiences that adapt to how you think and grow.</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-number">03</div>
+                        <h3 class="pillar-title">Personal Finance</h3>
+                        <p class="pillar-description">Financial clarity through intelligent insights and automation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Current Products</span>
+                </div>
+
+                <article class="product-card">
+                    <div class="product-header">
+                        <h3 class="product-name">Scriba</h3>
+                        <span class="product-status">Available Now</span>
+                    </div>
+                    <p class="product-description">
+                        Organize, transcribe, and summarize conversations to draw actionable insights.
+                        Transform scattered discussions into structured knowledge.
+                    </p>
+                    <div class="product-features">
+                        <span class="feature-tag">Transcription</span>
+                        <span class="feature-tag">Organization</span>
+                        <span class="feature-tag">Insights</span>
+                    </div>
+                </article>
+
+                <div class="coming-soon">
+                    <p>More innovations coming soon</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Get In Touch</span>
+                    <h2 class="section-title">Let's talk about how we can help transform your workflow</h2>
+                </div>
+
+                <div class="contact-content">
+                    <form id="contactForm" class="contact-form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSfW2b48yC1PqWhCqUmjcQJLv920tmNJNYAAvA-Mpa2xlT3qVQ/formResponse">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="entry.2034112256"
+                                    class="form-input"
+                                    required
+                                    placeholder="Your name"
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="entry.737331654"
+                                    class="form-input"
+                                    required
+                                    placeholder="your@email.com"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input
+                                type="text"
+                                id="subject"
+                                name="entry.1271470674"
+                                class="form-input"
+                                required
+                                placeholder="What would you like to discuss?"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea
+                                id="message"
+                                name="entry.1323292360"
+                                class="form-input form-textarea"
+                                required
+                                rows="6"
+                                placeholder="Tell us more about your needs..."
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">
+                            <span class="submit-text">Send Message</span>
+                            <span class="submit-arrow">→</span>
+                        </button>
+
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">Ellorra AI</div>
+                    <p class="footer-tagline">Building the future of productivity</p>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-copyright">&copy; 2026 Ellorra AI, LLC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

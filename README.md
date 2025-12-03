@@ -1,0 +1,1 @@
+This repository contains the assets required to build the Ellorra AI website and documentation. 
