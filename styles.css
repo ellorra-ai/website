@@ -387,26 +387,36 @@ body::before {
     max-width: 700px;
 }
 
-.product-features {
+.product-stores {
     display: flex;
     gap: var(--spacing-sm);
     flex-wrap: wrap;
 }
 
-.feature-tag {
-    font-size: 0.85rem;
+.store-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--color-text);
-    padding: 0.5rem 1rem;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
     transition: all 0.3s ease;
 }
 
-.feature-tag:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--color-purple-light);
+.store-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.store-icon {
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 .coming-soon {
@@ -642,10 +652,16 @@ body::before {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
     .header .container {
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xs);
         align-items: flex-start;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
 
     .nav {
@@ -655,11 +671,62 @@ body::before {
 
     .hero {
         min-height: 80vh;
-        padding-top: var(--spacing-xl);
+        padding-top: var(--spacing-lg);
+        padding-bottom: var(--spacing-md);
+    }
+
+    .hero-description {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .mission,
+    .products,
+    .contact {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-md);
     }
 
     .pillars {
         grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .pillar {
+        padding: var(--spacing-md);
+    }
+
+    .product-card {
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-md);
+    }
+
+    .product-header {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .product-name {
+        font-size: 2rem;
+    }
+
+    .product-description {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .product-stores {
+        gap: var(--spacing-xs);
+    }
+
+    .coming-soon {
+        margin-top: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+
+    .contact-form {
+        padding: var(--spacing-md);
     }
 
     .form-row {
@@ -669,6 +736,10 @@ body::before {
     .form-submit {
         width: 100%;
         justify-content: center;
+    }
+
+    .footer {
+        padding: var(--spacing-md) 0;
     }
 
     .footer-content {
