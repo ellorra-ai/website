@@ -406,6 +406,7 @@ body::before {
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-md);
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .store-link:hover {
@@ -417,6 +418,9 @@ body::before {
 .store-icon {
     width: 1.25rem;
     height: 1.25rem;
+    flex-shrink: 0;
+    max-width: 1.25rem;
+    max-height: 1.25rem;
 }
 
 .coming-soon {
