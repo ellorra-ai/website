@@ -140,11 +140,74 @@ function initSmoothScroll() {
     });
 }
 
+// Parallax effect for feature phones
+function initParallax() {
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+
+    if (parallaxElements.length === 0) return;
+
+    function updateParallax() {
+        parallaxElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Check if element is in viewport
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                const speed = parseFloat(element.dataset.parallax) || 0.1;
+                const centerOffset = rect.top - windowHeight / 2 + rect.height / 2;
+                const yOffset = centerOffset * speed;
+
+                element.style.transform = `translateY(${yOffset}px)`;
+            }
+        });
+    }
+
+    // Use requestAnimationFrame for smooth performance
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateParallax();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Initial call
+    updateParallax();
+}
+
+// Feature row reveal animation
+function initFeatureReveal() {
+    const featureRows = document.querySelectorAll('.feature-row');
+
+    if (featureRows.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('feature-row--visible');
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    });
+
+    featureRows.forEach(row => {
+        observer.observe(row);
+    });
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     initRevealElements();
     initSmoothScroll();
     initContactForm();
+    initParallax();
+    initFeatureReveal();
     reveal();
 });
 
