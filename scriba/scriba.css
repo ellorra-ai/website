@@ -139,263 +139,200 @@
     display: block;
 }
 
-/* Features Showcase Section - WhatsApp Style */
-.features-showcase {
-    padding: 0;
-}
-
-.feature-row {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: var(--spacing-xl) 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.feature-row:nth-child(odd) {
-    background: linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.03) 50%, transparent 100%);
-}
-
-.feature-row:nth-child(even) {
-    background: linear-gradient(180deg, transparent 0%, rgba(20, 184, 166, 0.03) 50%, transparent 100%);
-}
-
-/* Feature row reveal animation */
-.feature-row .feature-text,
-.feature-row .feature-phones {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.feature-row .feature-phones {
-    transition-delay: 0.2s;
-}
-
-.feature-row--visible .feature-text,
-.feature-row--visible .feature-phones {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.feature-row-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
-    align-items: center;
-}
-
-.feature-row--reverse .feature-row-content {
-    direction: rtl;
-}
-
-.feature-row--reverse .feature-text,
-.feature-row--reverse .feature-phones {
-    direction: ltr;
-}
-
-.feature-text {
-    max-width: 500px;
-}
-
-.feature-headline {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    color: var(--color-text);
-    margin-bottom: var(--spacing-md);
-}
-
-.feature-body {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-lg);
-}
-
-.feature-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--color-bg-dark);
-    background: linear-gradient(135deg, var(--color-purple-light), var(--color-teal));
-    padding: 1rem 2rem;
-    border-radius: var(--radius-full);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.feature-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-}
-
-.cta-arrow {
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-}
-
-.feature-cta:hover .cta-arrow {
-    transform: translateY(4px);
-}
-
-/* Phone Stack Layouts */
-.feature-phones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    will-change: transform;
-}
-
-.phone-stack {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.phone-stack--duo {
-    padding-left: 60px;
-}
-
-.phone-mockup--large {
-    max-width: 320px;
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow:
-        0 50px 100px rgba(0, 0, 0, 0.5),
-        0 0 0 12px #1a1a1a,
-        0 0 0 14px #333;
+/* Hero Marketing Image */
+.hero-marketing-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-xl);
+    filter: drop-shadow(0 30px 60px rgba(139, 92, 246, 0.3));
     transition: transform 0.5s ease;
 }
 
-.phone-mockup--large:hover {
+.hero-marketing-image:hover {
+    transform: scale(1.02) translateY(-5px);
+}
+
+/* Marketing Gallery - Apple Style Horizontal Scroll */
+.marketing-gallery {
+    padding: var(--spacing-xl) 0;
+    overflow: hidden;
+}
+
+.gallery-scroll {
+    display: flex;
+    gap: var(--spacing-md);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.gallery-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.marketing-card {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.marketing-card:hover {
     transform: scale(1.02);
 }
 
-.phone-mockup--back {
-    position: absolute;
-    left: 0;
-    top: 30px;
-    max-width: 280px;
-    border-radius: 35px;
+.marketing-image {
+    height: 600px;
+    width: auto;
+    display: block;
+    border-radius: var(--radius-xl);
+}
+
+.gallery-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: var(--spacing-md);
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.indicator.active {
+    width: 24px;
+    border-radius: 4px;
+    background: var(--color-purple-light);
+}
+
+/* iPad Showcase Section */
+.ipad-showcase {
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.03) 50%, transparent 100%);
+}
+
+.ipad-gallery {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.ipad-card {
+    border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow:
-        0 40px 80px rgba(0, 0, 0, 0.4),
-        0 0 0 10px #1a1a1a,
-        0 0 0 12px #333;
-    transform: rotate(-8deg);
-    z-index: 1;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
 }
 
-.phone-mockup--front {
-    position: relative;
-    max-width: 300px;
-    border-radius: 38px;
+.ipad-card:hover {
+    transform: translateY(-8px);
+}
+
+.ipad-card--featured {
+    grid-row: span 2;
+}
+
+.ipad-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-xl);
+}
+
+/* Video Showcase Section */
+.video-showcase {
+    padding: var(--spacing-2xl) 0;
+}
+
+.video-container {
+    max-width: 400px;
+    margin: var(--spacing-lg) auto 0;
+    border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow:
-        0 50px 100px rgba(0, 0, 0, 0.5),
-        0 0 0 11px #1a1a1a,
-        0 0 0 13px #333;
-    z-index: 2;
-    transform: rotate(5deg);
-    transition: transform 0.5s ease;
+    box-shadow: 0 40px 80px rgba(139, 92, 246, 0.2);
 }
 
-.phone-stack--duo:hover .phone-mockup--back {
-    transform: rotate(-12deg) translateX(-10px);
+.promo-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-xl);
 }
 
-.phone-stack--duo:hover .phone-mockup--front {
-    transform: rotate(8deg) translateX(10px);
+/* Section Header Styling */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
 }
 
-/* Responsive Features */
+.section-label {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-purple-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+/* Responsive Marketing Gallery */
+@media (max-width: 1200px) {
+    .ipad-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ipad-card--featured {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
 @media (max-width: 900px) {
-    .feature-row {
-        min-height: auto;
-        padding: var(--spacing-xl) 0;
+    .marketing-image {
+        height: 500px;
     }
 
-    .feature-row-content {
+    .ipad-gallery {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-        text-align: center;
     }
 
-    .feature-row--reverse .feature-row-content {
-        direction: ltr;
-    }
-
-    .feature-text {
-        max-width: 100%;
-        order: 1;
-    }
-
-    .feature-phones {
-        order: 2;
-    }
-
-    .feature-headline {
-        font-size: clamp(1.8rem, 6vw, 2.5rem);
-    }
-
-    .phone-mockup--large {
-        max-width: 260px;
-    }
-
-    .phone-stack--duo {
-        padding-left: 40px;
-    }
-
-    .phone-mockup--back {
-        max-width: 220px;
-    }
-
-    .phone-mockup--front {
-        max-width: 240px;
+    .ipad-card--featured {
+        grid-column: span 1;
     }
 }
 
 @media (max-width: 600px) {
-    .feature-row {
-        padding: var(--spacing-lg) 0;
+    .hero-marketing-image {
+        max-width: 300px;
     }
 
-    .phone-mockup--large {
-        max-width: 220px;
-        border-radius: 30px;
-        box-shadow:
-            0 30px 60px rgba(0, 0, 0, 0.4),
-            0 0 0 8px #1a1a1a,
-            0 0 0 10px #333;
+    .marketing-image {
+        height: 400px;
     }
 
-    .phone-stack--duo {
-        padding-left: 30px;
+    .gallery-scroll {
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 
-    .phone-mockup--back {
-        max-width: 180px;
-        border-radius: 28px;
-        top: 20px;
-    }
-
-    .phone-mockup--front {
-        max-width: 200px;
-        border-radius: 30px;
-    }
-
-    .feature-cta {
-        width: 100%;
-        justify-content: center;
+    .video-container {
+        max-width: 300px;
     }
 }
 
